@@ -6,24 +6,13 @@
 using namespace std;
 
 int main() {
-    list<int> L;
-    int n;
+    list<int> L((istream_iterator<int>(cin)), istream_iterator<int>());
 
-    cout << "Введите количество элементов в списке: ";
-    if (!(cin >> n) || n < 0) {
-        cout << "Ошибка: введено некорректное число." << endl;
-        return 1;
-    }
-
-    cout << "Введите " << n << " чисел(ла): ";
-    for (int i = 0; i < n; ++i) {
-        int element;
-        cin >> element;
-        L.push_back(element);
+    if (L.empty()) {
+        return 0;
     }
 
     auto half_size = L.size() / 2;
-
     auto i = L.begin();
     advance(i, half_size); 
     
