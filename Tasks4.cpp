@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <iterator>
+#include <cmath>    
 
 using namespace std;
 
@@ -12,12 +14,13 @@ struct less_abs {
 };
 
 int main() {
-    int K = 5;
-    vector<int> V = {1, -2, 10, 3, -8, 4};
+    int k;
+    cin >> k;
+    vector<int> V((istream_iterator<int>(cin)), istream_iterator<int>());
     
     using namespace std::placeholders;
     
-    auto it = find_if(V.rbegin(), V.rend(), bind(less_abs(), K, _1));
+    auto it = find_if(V.rbegin(), V.rend(), bind(less_abs(), k, _1));
 
     if (it != V.rend()) {
         cout << *it << endl;
