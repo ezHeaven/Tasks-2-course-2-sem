@@ -20,7 +20,7 @@ int main() {
         L.insert(i--, -1);
     }
 
-    for_each(L.begin(), L.end(), [](int n) {
+    for_each(L.begin(), L.end(), [](const int n) {
         cout << n << " ";
     });
 
