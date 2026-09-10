@@ -14,7 +14,7 @@ using namespace std;
  * @return - возращает булево значение
  */
 struct less_abs {
-    bool operator()(int a, int b) const;
+    bool operator()(const int a, const int b) const;
 };
 
 int main() {
